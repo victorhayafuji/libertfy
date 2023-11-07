@@ -1,0 +1,12 @@
+Lista Estática
+---------------------------------------------------------
+nroElem = 0; quer dizer que existem 0 elementos na lista.
+vetor[nroElem++] = elemento;
+lista.adiciona(4) = [4] - nroElem = 1;
+lista.adiciona(2) = [4,2] - nroElem = 2;
+lista.adiciona(5) = [4,2,5] - nroElem = 3;
+---------------------------------------------------------
+Ao usar o remove:
+lista.removePeloIndice(3) - nroElem = 2
+Fica um lixo na lista, que é o último elemento
+---------------------------------------------------------
