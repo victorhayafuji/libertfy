@@ -1,0 +1,122 @@
+
+$first_color: #E82F27;
+$second-color: #BF2A2A;
+$title-color: hsl(244, 12%, 12%);
+$text-color: hsl(244, 4%, 36%);
+$body-color: hsl(208, 97%, 85%);
+
+// FONTE E TIPOGRAFIA
+$h2-font-size: 1.25rem;
+$small-font-size: .813rem;
+$smaller-font-size: .75rem;
+
+$font-medium: 500;
+$font-semi-bold: 600;
+
+.nav_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background: rgba(15, 15, 15, 0.884);
+    color: white;
+    
+
+    position: fixed;
+    z-index: 10;
+
+    &.active {
+        background: rgba(29, 29, 29, 0.034);
+        backdrop-filter: blur(6px);
+    }
+
+    .logo {
+        margin: 6px 0;
+
+        img {
+            height: 30px;
+            margin: 7px 0;
+        }
+    }
+
+    .nav_links { 
+
+        ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+
+            .liSpecial {
+                margin-right: 70px;
+            }
+
+            .btnLogoff {
+                background-color: $first_color;
+                border-radius: 5px;
+                text-align: center;
+                padding: 5px 20px;
+                text-decoration: none;
+                color: white;
+                border: none;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                    
+            }
+            
+
+            .search {
+                margin: 0 25px;
+
+                input {
+                    width: 300px;
+                    border: none;
+                    outline: none;
+                    padding: 7px;
+                    border-radius: 5px;
+                    font-size: 0.80rem;
+                    padding-left: 16px;
+                    font-family: "Poppins";
+                }
+            }
+
+            li {
+                margin: 0 12px;
+                font-weight: 500;
+                font-size: 14px;
+                font-size: $small-font-size;
+                &.mark {
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+                    }
+                     
+                }
+                &.btnLogin {
+                    background-color: $first_color;
+                    border-radius: 5px;
+                    text-align: center;
+                    padding: 5px 15px;
+
+                    a {
+                      text-decoration: none;
+                      color: white;
+                    }
+                }
+                &:hover {
+                    color: red;
+                    cursor: pointer;
+                    font-weight: bold;
+                }
+            }
+
+            .mark {
+                text-decoration: none;
+                list-style: none;
+            }
+        }
+    }
+}

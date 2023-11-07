@@ -1,0 +1,244 @@
+$first_color: #E82F27;
+$second-color: #BF2A2A;
+$title-color: hsl(244, 12%, 12%);
+$text-color: hsl(244, 4%, 36%);
+$body-color: hsl(208, 97%, 85%);
+
+// FONTE E TIPOGRAFIA
+$h2-font-size: 1.25rem;
+$small-font-size: .813rem;
+$smaller-font-size: .75rem;
+
+$font-medium: 500;
+$font-semi-bold: 600;
+
+// TIPOGRAFIA RESPONSIVA
+@media screen and (min-width: 1024px) {
+    $h2-font-size: 1.75rem;
+    $normal-font-size: 1rem;
+    $small-font-size: .875rem;
+    $smaller-font-size: .813rem;
+}
+
+.container {
+    background-color: $body-color;
+    color: $text-color;
+
+    .login_content,
+    .login_form,
+    .login_inputs {
+        display: grid;
+    }
+
+    .login_content {
+        position: relative;
+        height: 100vh;
+        align-items: center;
+
+        .logo {
+            z-index: 100;
+            position: absolute;
+            top: 0;
+            margin: 25px;
+            
+            img {
+                width: 180px;
+            }
+        }
+
+        .login_img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            object-position: center;
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        .login_form {
+            position: absolute;
+            right: 0;
+            background-color: hsla(0, 0%, 97%, 0.781);
+            border: 2px solid hsla(244, 16%, 92%, .75);
+            margin-inline: 1.5rem;
+            row-gap: 1.25rem;
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: .5rem;
+            width: 45%;
+
+            .login_title{
+                color: $title-color;
+                font-size:  1.90rem;
+                margin-bottom: .5rem;
+
+                span {
+                    color: $first_color;
+                }
+            }
+
+            .login_description {
+                font-size: $small-font-size;
+            }
+
+            .login_inputs {
+                row-gap: .75rem;
+                margin-bottom: .5rem;
+
+                .login_input {
+                    width: 100%;
+                    padding: 14px 12px;
+                    border-radius: 6px;
+                    border: 2px solid $text-color;
+                    background-color: hsla(244, 16%, 92%, .6);
+                    color: $title-color;
+                    font-size: $smaller-font-size;
+                    font-weight: $font-medium;
+                    transition: border .4s;
+                }
+
+                .login_input::placeholder {
+                    color: $text-color;
+                }
+
+                .login_input:focus,
+                .login_input:valid {
+                    border: 2px solid $first_color;
+                }
+            }
+
+            .login_label {
+                display: block;
+                color: $title-color;
+                font-size: $small-font-size;
+                font-weight: $font-semi-bold;
+                margin-bottom: .25rem;
+            }
+
+            .login_box {
+                position: relative;
+                
+                .login_input {
+                    padding-right: 36px;
+                }
+
+                .login_eye {
+                    width: max-content;
+                    height: max-content;
+                    position: absolute;
+                    right: .75rem;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    font-size: 1.25rem;
+                    cursor: pointer;
+                }  
+            } 
+
+            .login_check {
+                display: flex;
+                column-gap: .5rem;
+                align-items: center;          
+                
+            }
+            .login_check_input {
+                appearance: none;
+                width: 16px;
+                height: 16px;
+                border: 2px solid $text-color;
+                background-color: hsla(244, 16%, 92%, .2);
+                border-radius: .25rem;
+            }
+              
+            // .login_check_input:checked {
+            //     background: $first_color;
+            // }
+              
+            .login_check_input:checked::before {
+                content: '✔️';
+                display: block;
+                color: #ffffff;
+                font-size: .75rem;
+                transform: translate(-2px, -4px);
+            }
+
+            .login_check_label {
+                font-size: $small-font-size;
+                font-weight: $font-semi-bold;
+            }
+
+            .login_buttons {
+                display: flex;
+                column-gap: .75rem;
+
+                .login_button {
+                    width: 100%;
+                    padding: 14px 2rem;
+                    border-radius: 6px;
+                    background: linear-gradient(180deg,
+                                $first_color,
+                                $second-color);
+                    color: #fff;
+                    font-size: $small-font-size;
+                    font-weight: $font-semi-bold;
+                    box-shadow: 0 6px 24px hsla(244, 75%, 48%, .5);
+                    margin-bottom: 1rem;
+                    cursor: pointer;
+
+                    
+                }
+
+                .login_button_ghost {
+                    width: 100%;
+                    padding: 14px 2rem;
+                    border-radius: 6px;
+                    font-size: $small-font-size;
+                    font-weight: $font-semi-bold;
+                    box-shadow: 0 6px 24px hsla(244, 75%, 48%, .5);
+                    margin-bottom: 1rem;
+                    cursor: pointer;
+                    background-color: hsla(244, 16%, 92%, .6);
+                    border: 2px solid $first_color;
+                    color: $first_color;
+                    box-shadow: none;
+
+                    a {
+                        text-decoration: none;
+                        color: $first_color;
+                    }
+                }
+
+                
+
+                
+            }
+
+            .login_forgot {
+                font-size: $smaller-font-size;
+                font-weight: $font-semi-bold;
+                color: $first_color;
+                text-decoration: none;
+            }
+              
+        }
+
+        
+
+        input, button {
+            font-family: 'Poppins';
+            border: none;
+            outline: none;
+        }
+
+        
+    }
+
+    
+
+    
+}
+

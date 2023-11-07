@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  
+width: 100%;
+
+}
+
+.containerDash {
+	display: flex;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 200px;
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  transition: all 0.3s;
+  z-index: 100;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 5px;
+  transition: all 0.3s;
+}
+
+.menu-toggle.collapsed span:first-child {
+  transform: translateY(8px) rotate(-45deg);
+}
+
+.menu-toggle.collapsed span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.collapsed span:last-child {
+  transform: translateY(-8px) rotate(45deg);
+}
+
+.menu {
+  margin-top: 20px;
+}
+
+.menu ul {
+  list-style-type: none;
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  margin-bottom: 5px;
+  transition: all 0.3s;
+}
+
+.menu ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.chart-container {
+  height: 250px;
+}
+
+
+.menu {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerBtns {
+	
+}
+
+.menu ul {
+  list-style-type: none;
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  margin-bottom: 5px;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.menu ul li a:hover {
+  background-color: rgba(245, 236, 236, 0.1);
+}
+
+.dashboard {
+  margin-left: 200px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: rgb(243, 241, 237);
+  margin-top: 100px;
+}
+
+.metric {
+  width: 48%;
+  margin-bottom: 20px;
+  background-color: #fffefe;
+  padding: 20px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.582);
+  background-repeat: no-repeat;
+  background-size:  contain;
+  background-position: center;
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);  
+  border: 1px solid black;
+}
+
+.metric.metric-avaliacao {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+}
+
+.metric.metric-avaliacao .chart-container {
+  margin-bottom: 20px;
+}
+
+.metric.metric-avaliacao .btn-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: auto;
+  margin-left: auto;
+}
+
+.btn-container{
+
+margin-top: 100px;
+margin-left: 460px;
+margin-bottom: 100px;
+
+}
+
+
+
+/* Estilos para o botão personalizado */
+.custom-button {
+  background-color: #2196F3;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  background-color: #0D47A1;
+}
+
+/* Estilos para o select personalizado */
+.select-container {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select {
+  display: inline-block;
+  padding: 10px 40px 10px 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.select-container:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #666666;
+}
+
+/* Estilos para o texto do select */
+.select-container p {
+  margin: 0;
+  padding: 5px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.select-arrow {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #f1f1f1;
+  border-left: 1px solid #666666;
+  border-top: 1px solid #666666;
+  transform: rotate(-45deg);
+}
+
+
+
+@media (max-width: 768px) {
+  .metric {
+    width: 100%;
+  }
+}

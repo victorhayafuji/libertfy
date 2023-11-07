@@ -1,0 +1,99 @@
+$first_color: #E82F27;
+$second-color: #BF2A2A;
+$title-color: hsl(244, 12%, 12%);
+$text-color: hsl(244, 4%, 36%);
+$body-color: hsl(208, 97%, 85%);
+
+// FONTE E TIPOGRAFIA
+$h2-font-size: 1.25rem;
+$small-font-size: .813rem;
+$smaller-font-size: .75rem;
+
+$font-medium: 500;
+$font-semi-bold: 600;
+
+.containerSearch {
+    background-color: rgb(194, 192, 189);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+    
+    .resultado {
+        width: 90%;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        margin-top: 125px;
+
+        .title_page{
+            width: 100%;
+            span {
+                font-size: 1.50rem;
+                font-weight: bold;
+                margin-left: 10px;
+                
+    
+                .red {
+                    color: $second-color;
+                    
+                }
+            }
+        }
+
+        .result {
+            width: 100%;
+            margin-left: 10px;
+
+            .seletor {
+                                
+                button {
+                    background-color: #BF2A2A;
+                    border: none;
+                    padding: 10px 10px;
+                    margin-right: 10px;
+                    cursor: pointer;
+                }
+            }
+
+            .itens {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 10px;
+                justify-content: center;
+                width: 100%;
+                margin-top: 40px;
+                .search_item {
+                    display: flex;
+                    cursor: pointer;
+
+                    &:hover {
+                        
+                        background-color: rgba(255, 0, 0, 0.24);
+                    }
+                    img {
+                        width: 90px;
+                        height: 90px;
+                        border-radius: 25%;
+                    }
+    
+                    .desc_item {
+                        display: flex;
+                        flex-direction: column;
+    
+                        span {
+                            font-size: 15px;
+
+                            &.especialidade{
+                                color: $text-color;
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

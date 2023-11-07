@@ -1,0 +1,331 @@
+$first_color: #E82F27;
+$second-color: #BF2A2A;
+$title-color: hsl(244, 12%, 12%);
+$text-color: hsl(244, 4%, 36%);
+$body-color: hsl(208, 97%, 85%);
+
+// FONTE E TIPOGRAFIA
+$h2-font-size: 1.25rem;
+$small-font-size: .813rem;
+$smaller-font-size: .75rem;
+
+$font-medium: 500;
+$font-semi-bold: 600;   
+
+.restauranteContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #9e3200;
+    
+
+
+    .banner {
+        width: 100%;
+        height: 400px;
+
+        img {
+            width: 100%;
+            height: 100%;
+
+        }
+    }
+
+    .content {
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        border-radius: 10px;
+        position: absolute;
+        top: 220px;
+        // position: absolute;
+        // top: 250%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
+
+        
+
+        .faixada_restaurante {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: 30px;
+            width: 100%;
+
+            .left {
+                display: flex;
+                flex-direction: column;
+                .avaliacao {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .qtd {
+                        font-size: 12.5px;
+                        margin-left: 20px;
+                        color: $text-color;
+                        font-weight: $font-medium;
+                    }
+                }
+                .restaurante_titulo {
+                    text-align: center;
+                    color: $title-color;
+                    font-size: 35px;
+                }
+            }
+            img {
+                width: 145px;
+                border-radius: 50%;
+            }
+            
+        }
+
+        
+
+        .descricao_restaurante {
+            width: 80%;
+            font-size: $small-font-size;
+            font-weight: $font-semi-bold;
+            color: $text-color;
+            margin: 20px 15px;
+            text-align: center;
+            left: 50%;
+            margin-left: 130px;
+        }
+
+        .infos_restaurante {
+            display: flex;
+            flex-direction: column;
+            font-size: $smaller-font-size;
+            font-weight: $font-semi-bold;
+            text-align: center;
+
+
+            h2 {
+                color: $second-color;
+                margin: 20px;
+                font-size: 14px;
+            }
+
+            span {
+                margin-bottom: 10px;
+            }
+        }
+
+        h1 {
+            
+            
+            font-size: 25px;
+            color: $title-color;
+            text-align: center;
+        }
+
+        .diviser {
+            border: 0.5px solid rgba(0, 0, 0, 0.212);
+            margin-top: 15px;
+        }
+
+        .pratos {
+            
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            align-items: center;
+            margin-top: 80px;
+
+            
+            
+            .prato {
+                margin: 20px 0;
+                display: flex;
+                width: 80%;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                border-radius: 10px;
+
+
+                .img {
+                    
+                    overflow: hidden;
+
+                    img {
+                        width: 150px;
+                        height: 150px;
+                        border-radius: 10px;
+
+                    }
+                }
+                .info {
+                    // background-color: blue;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 10px 20px;
+                    width: 60%;
+                    text-align: left;
+                    justify-content: center;
+                    margin-top: 5px;
+                    margin-left: 10px;
+
+                    .line {
+                        width: 80%;
+                        border: 1px solid rgba(0, 0, 0, 0.068);
+                        margin-top: 60px;
+                        margin-left: 50px;
+                    }
+                    h2 {
+                        color: $second-color;
+                        font-size: 16px;
+                    }
+
+                    .descricao_prato {
+                        margin-top: 10px;
+                        font-size: $smaller-font-size;
+                        font-weight: $font-semi-bold;
+                        color: hsl(240, 3%, 13%);
+                    }
+                }
+
+                
+
+                &:hover {
+                    background-color: rgba(17, 17, 17, 0.014);
+                }
+            }
+        }
+    }
+
+    .estrelasContainer {
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        height: 350px;
+        text-align: center;
+        width: 80%;
+        margin: 70px;
+        padding: 20px 10px;
+
+        h2 {
+            font-size: 25px;
+
+            &.mark {
+                color: $second-color;
+            }
+        }
+
+        span {
+            margin: 50px 0;
+            font-size: 14px;
+            font-weight: $font-medium;
+        }
+
+        button {
+            
+            padding: 14px 2rem;
+            border-radius: 6px;
+            background: linear-gradient(180deg,
+                    $first_color,
+                     $second-color
+            );
+            color: #fff;
+            font-size: $small-font-size;
+            font-weight: $font-semi-bold;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            border: none;
+            margin: 45px 0;
+        }
+
+    }
+
+    .comentarios {
+        background-color: #f7f7f7c4;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        align-items: left;
+        height: auto;
+        padding: 20px 100px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        .resultado {
+            border-radius: 0.25rem;
+            height: auto;
+            padding: 50px 0;
+            p {
+                text-align: center;
+                font-weight: $font-medium;
+                padding: 50px ;
+            }
+        }
+
+       .div1 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        h3 {
+            margin: 20px 0;
+        }
+
+        span {
+            font-weight: $font-medium;
+        }
+
+        .novoComentario {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            textarea {
+                appearance: none;
+                width: 16px;
+                height: 16px;
+                border: 2px solid $text-color;
+                background-color: hsla(244, 16%, 92%, .2);
+                width: 70%;
+                height: 50px;
+                padding-left: 10px;
+                overflow-x: hidden;
+                overflow-wrap: break-word;
+                height: 53px;
+                border-radius: 0.375em;
+                font-size: 16px;
+                padding-top: 10px;
+                margin: 15px 0;
+
+                
+                &:valid {
+                    border: solid $first_color;
+                }
+                
+            }
+
+            button {
+                
+                padding: 14px 2rem;
+                border: none;
+                border-radius: 5px;
+                background: $first_color;
+                color: #fff;
+                font-size: $small-font-size;
+                font-weight: $font-semi-bold;
+                cursor: pointer;
+                margin-left: 15px;
+
+                
+            }
+        }
+       }
+
+        
+    }
+}

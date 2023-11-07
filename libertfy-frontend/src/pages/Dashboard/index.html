@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+
+</head>
+<body>
+  <div class="sidebar">
+    <div class="menu-toggle" onclick="toggleSidebar()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="dashboard">
+    <div class="metric">
+      <h2>Idade</h2>
+      <div class="chart-container">
+        <canvas id="idade-chart"></canvas>
+      </div>
+    </div>
+    <div class="metric">
+      <h2>Gênero</h2>
+      <div class="chart-container">
+        <canvas id="genero-chart"></canvas>
+      </div>
+    </div>
+    <div class="metric metric-avaliacao">
+      <h2>Avaliação</h2>
+      <div class="chart-container">
+        <canvas id="avaliacao-chart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="btn-container">
+    <div class="select-container">
+      <!-- <select name="botoes" class="custom-select" onchange="handleSelectChange()">
+        <option value="">Selecione</option>
+        <option value="handletxt">TXT</option>
+        <option value="handlecsv">CSV</option>
+      </select> -->
+      <button class="custom-button" onclick="handleButtonClick()">Executar</button>
+    <input type="file" id="upload-button" class="upload-button" accept=".txt, .csv">
+    <!-- <label for="upload-button" class="custom-upload-button"></label> -->
+    <button class="custom-button" onclick="downloadTXT()">Download TXT</button>
+    <button class="custom-button" onclick="uploadFile()">Upload</button>
+      <!-- <div class="select-arrow"></div> -->
+    </div>
+    <!-- <button class="custom-button" onclick="handleButtonClick()">Executar</button> -->
+    <!-- <input type="file" id="upload-button" class="upload-button" accept=".txt, .csv">
+      <label for="upload-button" class="custom-upload-button"></label> -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="chart.js"></script>
+  <script src="app.js"></script>
+  <script>
+
+    // Função para lidar com o clique no botão de download
+    function downloadTXT() {
+      window.location.href = 'http://localhost:8080/usuarios/download-txt';
+    }
+
+    // Função para lidar com o clique no botão de upload
+    function uploadFile() {
+      axios.post('http://localhost:8080/usuarios/upload/1', {})
+        .then(function (response) {
+          console.log('Arquivo enviado com sucesso!');
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+
+
+    function toggleSidebar() {
+      var sidebar = document.querySelector('.sidebar');
+      sidebar.classList.toggle('collapsed');
+    }
+
+    function handleButtonClick() {
+      var select = document.querySelector('select[name="botoes"]');
+      var selectedOption = select.options[select.selectedIndex].value;
+      console.log('Opção selecionada:', selectedOption);
+    }
+
+    function handleSelectChange() {
+      var select = document.querySelector('select[name="botoes"]');
+      var selectedOption = select.options[select.selectedIndex].value;
+      console.log('Opção selecionada:', selectedOption);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var idadeChart = new Chart(document.getElementById('idade-chart'), {
+        type: 'bar',
+        data: {
+          labels: ['Homem', 'Mulher'],
+          datasets: [{
+            label: 'Idade',
+            data: [28, 32, 35],
+            backgroundColor: ['#BF2A2A', '#f28322', 'rgba(75, 192, 192, 0.6)'],
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        }
+      });
+
+      var generoChart = new Chart(document.getElementById('genero-chart'), {
+        type: 'pie',
+        data: {
+          labels: ['Homem', 'Mulher'],
+          datasets: [{
+            label: 'Gênero',
+            data: [10, 20],
+            backgroundColor: ['#BF2A2A', '#f28322', '#000000'],
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        }
+      });
+
+      var avaliacaoChart = new Chart(document.getElementById('avaliacao-chart'), {
+        type: 'line',
+        data: {
+          labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Maio', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+          datasets: [{
+            label: 'Avaliação',
+            data: [0, 100],
+            backgroundColor: '#f28322',
+            borderColor: '#000000',
+            borderWidth: 1,
+            fill: false,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        }
+      });
+    });
+  </script>
+</body>
+</html>
