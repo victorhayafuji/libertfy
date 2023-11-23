@@ -1,12 +1,12 @@
 pipeline {
         agent any
     stages {
-        stage('Change branch to Backend'){
+        stage('Change GitHub branch to Backend'){
         steps {
             sh 'git checkout backend'
             }
         }
-        stage('Pull Request'){
+        stage('Pull Request for GitHub'){
         steps {
             sh 'git pull'
             }
