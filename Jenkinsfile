@@ -6,9 +6,15 @@ pipeline {
             sh 'git checkout backend'
             }
         }
-        stage('Pull Request for GitHub'){
+        stage('Build'){
         steps {
             sh 'git pull'
+            }
+        }
+	stage('Deploy'){
+        steps {
+            sh 'cd /var/lib/jenkins/workspace/Libertfy/libertfy-backend'
+	    sh 'mvn clean package'
             }
         }
     }
