@@ -23,7 +23,8 @@ pipeline {
                 script {
                     dir('/var/lib/jenkins/workspace/TestePipeline/libertfy-backend') {
                         sh 'mvn clean package || exit 1'
-                        sh 'nohup java -jar target/demo-0.0.1-SNAPSHOT.jar > output.log 2>&1 &'
+                        sh 'java -jar /var/lib/jenkins/workspace/TestePipeline/libertfy-backend/demo-0.0.1-SNAPSHOT.jar > output.log 2>&1 & disown'
+
                     }
                 }
             }
