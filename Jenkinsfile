@@ -13,7 +13,7 @@ pipeline {
         }
 	stage('Deploy'){
         steps {
-            sh 'cd /var/lib/jenkins/workspace/Libertfy/libertfy-backend'
+            sh 'cd /var/lib/jenkins/workspace/TestePipeline/libertfy-backend'
 	    sh 'mvn clean package'
             }
         }
