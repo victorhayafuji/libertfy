@@ -4,24 +4,35 @@ pipeline {
     stages {
         stage('Change GitHub branch to Backend') {
             steps {
-                sh 'git checkout backend'
+                script {
+                    sh 'git checkout backend || exit 1'
+                }
             }
         }
 
         stage('Build') {
             steps {
-                sh 'git pull'
+                script {
+                    sh 'git pull || exit 1'
+                }
             }
         }
 
         stage('Deploy') {
             steps {
-                dir('/var/lib/jenkins/workspace/TestePipeline/libertfy-backend') {
-                    sh 'mvn clean package'
-
-                    // Adicionar o comando Java -jar com nohup e disown
-                    sh 'nohup java -jar /var/lib/jenkins/workspace/TestePipeline/libertfy-backend/demo-0.0.1-SNAPSHOT.jar > output.log 2>&1 & disown'
+                script {
+                    dir('/var/lib/jenkins/workspace/TestePipeline/libertfy-backend') {
+                        sh 'mvn clean package || exit 1'
+                    }
                 }
+            }
+        }
+    }
+
+    post {
+        always {
+            catchError(buildResult: 'FAILURE', message: 'Erro durante a execução da pipeline') {
+                // Código adicional de pós-processamento aqui
             }
         }
     }
