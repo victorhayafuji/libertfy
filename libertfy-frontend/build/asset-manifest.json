@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.68ef2768.css",
+    "main.js": "/static/js/main.c586e63d.js",
+    "static/media/tranding-food-1.png": "/static/media/tranding-food-1.6f2e516a072e95f15aa7.png",
+    "static/media/tranding-food-2.png": "/static/media/tranding-food-2.c2ae1b9c1cde27442f55.png",
+    "static/media/2006004.jpg": "/static/media/2006004.cbb4cb44575658948038.jpg",
+    "static/media/background-restaurante.jpg": "/static/media/background-restaurante.f19448d2917f195b8a11.jpg",
+    "static/media/noodle-box-logo.png": "/static/media/noodle-box-logo.f9bf9a8fedd4e13f77cb.png",
+    "static/media/japan-chef-logo-libert.png": "/static/media/japan-chef-logo-libert.57fb7e216fb85fb6d27e.png",
+    "static/media/1317336.jpg": "/static/media/1317336.fd3ea3f6177446e442e6.jpg",
+    "static/media/tranding-food-3.png": "/static/media/tranding-food-3.ff4ea00d89ca2370a12d.png",
+    "static/media/res1.jpg": "/static/media/res1.85dde64f68bec419405b.jpg",
+    "static/media/kimura.jpg": "/static/media/kimura.50766e529566943da6ad.jpg",
+    "static/media/restaurante1.png": "/static/media/restaurante1.6b61c9f20ef72f4699bc.png",
+    "static/media/restaurante4.jpg": "/static/media/restaurante4.804292c5f55bbdc4fc1a.jpg",
+    "static/media/restaurante3.jpg": "/static/media/restaurante3.0c155e0e38487e508516.jpg",
+    "static/media/restaurante2.jpg": "/static/media/restaurante2.e24b1dcfd3e3461f0df0.jpg",
+    "static/media/user.png": "/static/media/user.a6143582309785dca610.png",
+    "static/media/desc-logo.png": "/static/media/desc-logo.ddd7ec439e7d1d2d4f90.png",
+    "index.html": "/index.html",
+    "main.68ef2768.css.map": "/static/css/main.68ef2768.css.map",
+    "main.c586e63d.js.map": "/static/js/main.c586e63d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68ef2768.css",
+    "static/js/main.c586e63d.js"
+  ]
+}

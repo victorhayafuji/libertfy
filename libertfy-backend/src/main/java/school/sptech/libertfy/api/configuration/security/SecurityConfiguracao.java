@@ -65,6 +65,7 @@ public class SecurityConfiguracao {
             new AntPathRequestMatcher("/comentarios/**"),
             new AntPathRequestMatcher("/pratos/**"),
             new AntPathRequestMatcher("/usuarios/upload/1"),
+            new AntPathRequestMatcher("/usuarios/1"),
 
 
 
