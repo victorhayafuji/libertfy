@@ -38,6 +38,17 @@ public class RestauranteController {
         return ResponseEntity.status(200).body(listaRestaurante);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Restaurante> obterRestaurantePorId(@PathVariable Integer id) {
+        Restaurante restaurante = restauranteRepository.findById(id).orElse(null);
+
+        if (restaurante != null) {
+            return ResponseEntity.ok(restaurante);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
         @GetMapping("/nome")
         public ResponseEntity<Restaurante> listarRestauranteNome(@RequestParam String nome) {
 
